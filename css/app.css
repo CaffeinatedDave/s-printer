@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Catamaran:400,200,600);
+body {
+  background: url(/images/subtle_grunge.png);
+  font-family: 'Catamaran', sans-serif;
+  font-size: 18px;
+  font-weight: 200; }
+
+h1 {
+  text-align: center; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  font-family: 'Catamaran', sans-serif; }
+
+@media (min-width: 768px) {
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .row > [class*='col-'] {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; } }
+
+.loading::after {
+  content: "";
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: repeating-linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px);
+  border-radius: 4px;
+  opacity: 0.8; }
+
+.panel {
+  height: 100%; }
+  .panel .panel-title {
+    min-height: 58px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center; }
+  .panel .panel-body {
+    height: 100%;
+    position: relative;
+    padding-bottom: 76px; }
+    .panel .panel-body button {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      width: calc(100% - 30px); }
+
+#left {
+  transform: translate(-1000px, 0px);
+  opacity: 0; }
+
+#right {
+  transform: translate(1000px, 0px);
+  opacity: 0; }
+
+/*# sourceMappingURL=app.css.map */

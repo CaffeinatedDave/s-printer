@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+ruby '2.1.5'
+gem 'sinatra', '1.4.5'
+gem 'activesupport', '4.2.6'
+gem 'json', '1.8.1'
+gem 'sinatra-activerecord'
+gem 'mongo'
+gem 'dotenv'
+gem 'erubis'
+gem 'thin'
+gem 'sinatra-cross_origin'
