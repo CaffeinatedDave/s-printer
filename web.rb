@@ -48,8 +48,7 @@ post '/imageupload' do
 
   grid_file = Mongo::Grid::File.new(
     file.read,
-    :filename => File.basename(name),
-    :chunk_size => 1024
+    :filename => File.basename(name)
   )
 
   $db.database.fs(:fs_name => 'grid').insert_one(grid_file)
