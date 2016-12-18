@@ -19,12 +19,25 @@
       </div>
       <div class="col-sm-6">
         <h2>Images</h2>
+      <% @files.each_with_index do |name, i| %>
+        <% if i % 3 == 0 %>
         <div class="row">
-        <% @files.each do |name| %>
+        <% end %> 
           <div class="col-sm-4">
-            <img style="width: 100%" src="/images/<%=name%>" alt="<%=name%>"/>
+			<p><%=name%></p>
+            <span id="img-load-<%=name%>">
+              <p>
+                <span><a href="#" onclick="loadImage('<%=name%>'); return false;">Load Image</a></span>
+              </p>
+            </span>
+            <p>
+              <a href="/deleteImage/<%=name%>" onclick="return confirm('Really delete <%=name%>?');">Delete?</a>
+            </p> 
           </div>
-        <% end %>
+        <% if i % 3 == 0 %>
+        </div">
+        <% end %> 
+      <% end %>
         </div>
         <form action="imageupload" method="POST"  enctype="multipart/form-data">
           <p>

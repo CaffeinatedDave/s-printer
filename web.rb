@@ -69,6 +69,22 @@ get '/images/:name' do |name|
   send_file out, type: 'image/bmp', disposition: 'inline'
 end
 
+get '/deleteImage/:name' do |name|
+  settings = $db[:settings].find.limit(1).first
+  images = settings[:images]
+  images.delete(params[:name])
+  $db[:settings].find_one_and_update({},
+    {"$set" => {:images => images}},
+    {:return_document => :after} 
+  )
+
+  fs = $db.database.fs(:fs_name => 'grid')
+  file = fs.find_one(:filename => name)
+  fs.delete(file.id)
+
+  redirect to('/')
+end
+
 get '/settings' do
   $db[:settings].find_one_and_update({}, 
     {"$set" => {:lastCheck => Time.new.to_i}},
