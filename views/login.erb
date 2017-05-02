@@ -1,0 +1,13 @@
+<% if session[:login_attempted] %>
+<p> Invalid login. </p>
+<% end %>
+
+<form method="POST" action="/">
+  <p>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password"/>
+  </p>
+  <p>
+    <button type="submit">Login</button>
+  </p>
+</form>
