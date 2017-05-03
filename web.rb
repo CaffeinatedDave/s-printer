@@ -14,7 +14,7 @@ use Rack::Session::Cookie, :key => 'rack.session',
   #                         :domain => ENV['DOMAIN'],
                            :path => '/',
                            :expire_after => 60 * 60, # 1 hr. 
-                           :secret => 'bmJSq9SZexKAeSv8'
+                           :secret => ENV['COOKIE_SECRET']
 
 register do
   def auth (type)
